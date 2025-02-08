@@ -1,0 +1,8 @@
+modname=broadcom-wl
+modver=6.30.223.271
+built_modules=wl.ko
+
+build() {
+  touch "$builddir"/Makefile
+  make KBASE=/lib/modules/${kernel_ver} -C "$kernel_srcdir" M="$builddir" modules
+}
